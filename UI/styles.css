@@ -1,0 +1,73 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: #e74c3c; /* Red background */
+    height: 100vh;
+    padding: 20px;
+    color: white;
+}
+
+.sidebar-header {
+    margin-bottom: 20px;
+}
+
+.sidebar .nav-link {
+    color: white;
+    font-size: 18px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .nav-link.active {
+    background-color: #c0392b;
+    border-radius: 5px;
+}
+
+.sidebar .nav-link .icon {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+/* Main Content Styles */
+.main-content {
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.page-header {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.btn-warning {
+    margin-top: 10px;
+}
+
+/* Custom Button Styles */
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
