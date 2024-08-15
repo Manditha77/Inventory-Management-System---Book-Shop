@@ -20,30 +20,25 @@ body {
 }
 
 .dashboard-header{
-    background-color: #ed6c45;
+    background-color: #ff8059;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 20px;
 
     }
 
     
-
-
-
-
-
-
 .dashboard-sidebar-menus{
-    background-color: #f34d00; 
+    background-color: #ff6a00; 
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     padding: 20px;
+    text-align: center;
       
 }
 
