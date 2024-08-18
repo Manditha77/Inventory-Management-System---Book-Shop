@@ -1,6 +1,6 @@
 <?php
 // Include the database connection
-include 'db_conn.php';
+include 'dbconn.php';
 
 // Initialize message variable
 $message = "";
