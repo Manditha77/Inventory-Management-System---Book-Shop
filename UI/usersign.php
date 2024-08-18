@@ -119,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
         <div class="input-box">
-        <select class="form-control" name="email"placeholder="Email" required>
+            <input type="email" class="form-control" name="email" placeholder="Email" required>
             <i class='bx bxs-envelope'></i>
         
         </div>
@@ -130,7 +130,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div> 
 
         <div class="input-box">
-            <input type="password" class="form-control" name="confirm password"placeholder="Re enter Password"required>
+            <input type="password" class="form-control" name="confirm_password"placeholder="Re enter Password"required>
             <i class='bx bxs-lock-alt' ></i>
         </div>
 
