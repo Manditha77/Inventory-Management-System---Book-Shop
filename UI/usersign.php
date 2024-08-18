@@ -103,13 +103,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php endif;?>    
 
         <div class="input-box">
-            <input type="text" class="form-control" placeholder="USER NAME">
+        <input type="text" class="form-control" name="username" placeholder="USER NAME" required>
             <i class='bx bxs-user'></i>
         </div>
 
         
         <div class="input-box">
-            <select class="form-control">
+            <select class="form-control" name="position"required>
                 <option value="" disabled selected>POSITION</option>
                 <option value="Manager">Manager</option>
                 <option value="Staff">Staff</option>
@@ -119,22 +119,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
         <div class="input-box">
-            <input type="email" class="form-control" placeholder="Email">
+        <select class="form-control" name="email"placeholder="Email" required>
             <i class='bx bxs-envelope'></i>
         
         </div>
 
         <div class="input-box">
-            <input type="password" class="form-control" placeholder="Password">
+            <input type="password" class="form-control" name="password"placeholder="Password" required>
             <i class='bx bxs-lock-alt' ></i>
         </div> 
 
         <div class="input-box">
-            <input type="password" class="form-control" placeholder="Re enter Password">
+            <input type="password" class="form-control" name="confirm password"placeholder="Re enter Password"required>
             <i class='bx bxs-lock-alt' ></i>
         </div>
 
-        <button type="submit" class="btn btn-primary" class="btn">SIGN UP</button>
+        <button type="submit" class="btn btn-primary" >SIGN UP</button>
+        
         </form>
     </div>
     
