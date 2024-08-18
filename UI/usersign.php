@@ -1,38 +1,38 @@
 <?php
-//include the database connection
-include 'db_conn.php';
+// Include the database connection
+include 'db_connect.php';
 
-//create message veriable
-$message="";
+// Initialize message variable
+$message = "";
 
-//Check if the form was submitted
-if ($_SERVER["REQUEST_METHOD"]=="POST"){
-    $username=trim($_POST['username']);
-    $position=$_POST['username'];
-    $email=trim($_POST['email']);
-    $password=$_POST['password'];
-    $confrim_password=$_POST['confrim_password'];
+// Check if the form was submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Sanitize and validate the inputs
+    $username = trim($_POST['username']);
+    $position = $_POST['position'];
+    $email = trim($_POST['email']);
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm_password'];
 
-    //validate username
-    if(empty($username)){
-        $message="Username is required!"
-    }elseif(strlen($username)<3){
-        $message="Username must be at least 3 characters long!";
-    
-    }elseif(!preg match("/^[a-zA-Z0-9_]*$/",$username)){
-        $message="Username can only contain letters,numbers,and underscores!";
+    // Validate username
+    if (empty($username)) {
+        $message = "Username is required!";
+    } elseif (strlen($username) < 3) {
+        $message = "Username must be at least 3 characters long!";
+    } elseif (!preg_match("/^[a-zA-Z0-9_]*$/", $username)) {
+        $message = "Username can only contain letters, numbers, and underscores!";
     }
 
-    //validate position
-    elseif(empty($position)){
-        $message="Position is required!";
+    // Validate position
+    elseif (empty($position)) {
+        $message = "Position is required!";
     }
 
-    //validate email
-    elseif(empty($email)){
-        $message="Email is required!"
-    }elseif(!filter_var($email,FILTER_VALIDATE_EMAIL)){
-        $message="invalid email format!";
+    // Validate email
+    elseif (empty($email)) {
+        $message = "Email is required!";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $message = "Invalid email format!";
     }
 
     // Validate password
@@ -44,22 +44,22 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 
     // Validate password confirmation
     elseif ($password !== $confirm_password) {
-            $message = "Passwords do not match!";
+        $message = "Passwords do not match!";
     }
 
-     // If all validations pass
+    // If all validations pass
     else {
-         // Hash the password before storing it
-        $hashed_password = password_hash($password, PASSWORD_BCRYPT);}
+        // Hash the password before storing it
+        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
-// Prepare the SQL statement to insert user data
-$stmt = $conn->prepare("INSERT INTO users (username, position, email, password) VALUES (?, ?, ?, ?)");
-$stmt->bind_param("ssss", $username, $position, $email, $hashed_password);
+        // Prepare the SQL statement to insert user data
+        $stmt = $conn->prepare("INSERT INTO users (username, position, email, password) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $username, $position, $email, $hashed_password);
 
         // Execute the statement and check if successful
         if ($stmt->execute()) {
             $message = "User registered successfully!";
-            header("Location: userlogin.php");
+            header("Location: login.php");
             exit(); 
         } else {
             $message = "Error: " . $stmt->error;
@@ -71,8 +71,9 @@ $stmt->bind_param("ssss", $username, $position, $email, $hashed_password);
 
     // Close the connection
     $conn->close();
-
+}
 ?>
+
 <!-- -------------------------------------------------html part---------------------------------------------------------------------- -->
 <!DOCTYPE html>
 <html lang="en">
