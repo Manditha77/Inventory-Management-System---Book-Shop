@@ -100,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="alert">
                 <?php echo $message;?>
         </div>
-        <?php endif:?>    
+        <?php endif;?>    
 
         <div class="input-box">
             <input type="text" class="form-control" placeholder="USER NAME">
