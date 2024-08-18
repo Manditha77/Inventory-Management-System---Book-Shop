@@ -73,7 +73,7 @@ $stmt->bind_param("ssss", $username, $position, $email, $hashed_password);
     $conn->close();
 
 ?>
-
+<!-- -------------------------------------------------html part---------------------------------------------------------------------- -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,9 +91,15 @@ $stmt->bind_param("ssss", $username, $position, $email, $hashed_password);
             <h2>INVENTORY MANAGEMENT SYSTEM</h2>
         </div>
     
-        <form>
+        <form method="post" action="">
 
         <h3>USER SIGN UP</h3>
+
+        <?php if($message):?>
+            <div class="alert">
+                <?php echo $message;?>
+        </div>
+        <?php endif:?>    
 
         <div class="input-box">
             <input type="text" class="form-control" placeholder="USER NAME">
