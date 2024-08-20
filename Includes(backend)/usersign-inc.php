@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
         // Prepare the SQL statement to insert user data
-        $stmt = $conn->prepare("INSERT INTO users (username, position, email, password) VALUES (?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO user (username, position, email, password) VALUES (?, ?, ?, ?)");
         $stmt->bind_param("ssss", $username, $position, $email, $hashed_password);
 
         // Execute the statement and check if successful
