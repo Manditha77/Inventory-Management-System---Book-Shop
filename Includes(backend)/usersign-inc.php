@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Execute the statement and check if successful
         if ($stmt->execute()) {
             $message = "User registered successfully!";
-            header("Location: userlogin.php");
+            header("Location: ../UI/userlogin.php");
             exit(); 
         } else {
             $message = "Error: " . $stmt->error;
