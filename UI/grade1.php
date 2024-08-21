@@ -36,4 +36,30 @@
         </nav>
     </aside>
 
+
+    <table class="grade 1 table">
+                    <thead>
+                        <tr>
+                            <th>Item No</th>
+                            <th>Item</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Nursery Rhymes</td>
+                            <td>50</td>
+                            <td>150</td>
+                            <td>
+                                <button class="btn btn-success btn-sm">Update</button>
+                                <button class="btn btn-danger btn-sm">Delete</button>
+                            </td>
+                        </tr>
+                     
+                    </tbody>
+                </table>
+
             
