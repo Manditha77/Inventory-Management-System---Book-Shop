@@ -37,7 +37,7 @@
     </aside>
 
 
-    <table class="grade 1 table">
+    <table class="grade_1_table">
                     <thead>
                         <tr>
                             <th>Item No</th>
