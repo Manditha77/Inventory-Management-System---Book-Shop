@@ -127,6 +127,9 @@ body {
 
 .grade_1_table{
     opacity: 0%;
+    border: black;
+    border-radius: 50%;
+
 }
 
 
