@@ -50,6 +50,7 @@ body {
     color: white;
     display: block;
     width: 100%;
+    text-decoration: none;
 }
 
 .wrapper .sidebar ul li a i {
@@ -62,6 +63,7 @@ body {
 
 .wrapper .sidebar ul li:hover {
     background: #cb5c4d;
+    text-decoration: none;
 }
 
 .wrapper .sidebar ul li:hover a {
