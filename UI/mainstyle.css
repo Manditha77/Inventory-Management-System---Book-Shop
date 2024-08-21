@@ -12,7 +12,7 @@ body {
     min-height: 100vh;
     background-image: url(../Images/background-image.jpg);
     background-size: cover;
-    background-position: center;
+    
 }
 
 .dashboard-sidebar {
