@@ -125,12 +125,11 @@ body {
     flex-wrap: wrap;
 }
 
-.grade_1_table{
+.grade_1_table {
     opacity: 100%;
     border: black;
     border-radius: 50%;
     margin-top: 20px;
-
 }
 
 .table th, .table td {
@@ -154,7 +153,6 @@ body {
     border-color: #dc3545;
     color: white;
 }
-
 
 
 
