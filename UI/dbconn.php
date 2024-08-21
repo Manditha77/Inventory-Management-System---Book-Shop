@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "root";
+$password = "Dulmi#12345";
 $dbname = "mihira_bookshop";
 
 // Create connection
