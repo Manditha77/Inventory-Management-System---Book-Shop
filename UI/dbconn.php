@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "Dulmi#12345";
-$dbname = "mihira_bookshop";
+$dbname = "book_inventory_management_system";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
