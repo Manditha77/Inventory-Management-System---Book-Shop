@@ -7,7 +7,7 @@ if(isset ($_POST['update'])) {
     $Quantity = $_POST['Quantity'];
     $Price = $_POST['Price'];
 
-    $sql = "INSERT INTO `grade1`(`Item_No`, `Item_Name`, `Qauntity`, `Price`) VALUES ('$Item_No','$Item_Name','$Quantity','$Price')"
+    $sql = "INSERT INTO `grade1`(`Item_No`, `Item_Name`, `Quantity`, `Price`) VALUES ('$Item_No','$Item_Name','$Quantity','$Price')";
 
     $result = mysqli_query($conn, $sql);
 
@@ -16,7 +16,7 @@ if(isset ($_POST['update'])) {
     }
 
     else {
-        echo "Failed: " .mysqli_error($conn) 
+        echo "Failed: " .mysqli_error($conn);
        }
 
 
@@ -88,7 +88,11 @@ if(isset ($_POST['update'])) {
                     <td>item</td>
                     <td>quantity</td>
                     <td>price</td>
-                    <td>Action</td>
+                    <td>
+                         <a href="update.php?id=' . $item['item_no'] . '" class="btn btn-success btn-sm">Update</a>
+                        <a href="delete.php?id=' . $item['item_no'] . '" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+
                         
                     </td>
                 </tr>

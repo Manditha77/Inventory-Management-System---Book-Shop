@@ -1,5 +1,5 @@
 <?php
-    $severname = "localhost 3307";
+    $servername = "localhost";
     $username = "root";
     $password = "Dulmi#12345";
 
@@ -9,4 +9,4 @@
         die("connection failed: " .mysqli_connect_error());
     }
 
-    echo "Connect Successfully";
+    //echo "Connect Successfully";
