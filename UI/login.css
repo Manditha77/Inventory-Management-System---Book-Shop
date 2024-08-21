@@ -25,7 +25,7 @@ body {
     justify-content: center;
     align-items: center;
     color: rgb(0, 0, 0);
-    padding: 20px;
+    padding: 5px;
 
     }
 
@@ -37,28 +37,28 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
-    padding: 20px;
+    padding: 5px;
     text-align: center;
       
 }
 
 .Home{
-    padding: 30px;
+    padding: 15px;
     text-align:start;
 }
 
 .Categories{
-    padding: 30px;
+    padding: 15px;
     text-align: left;
 }
 
 .Suppliers{
-    padding: 50px;
+    padding: 15px;
     text-align:start;
 }
 
 .Users{
-    padding: 50px;
+    padding: 15px;
     text-align:start;
 }
 
