@@ -126,10 +126,33 @@ body {
 }
 
 .grade_1_table{
-    opacity: 50%;
+    opacity: 100%;
     border: black;
     border-radius: 50%;
+    margin-top: 20px;
 
+}
+
+.table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.btn-warning {
+    margin-top: 10px;
+}
+
+/* Custom Button Styles */
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
 }
 
 
