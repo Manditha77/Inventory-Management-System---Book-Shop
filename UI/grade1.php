@@ -1,3 +1,34 @@
+<?php
+include "db_conn.php";
+
+if(isset ($_POST['update'])) {
+    $Item_No = $_POST['Item_No'];
+    $Item_Name = $_POST['Item_Name'];
+    $Quantity = $_POST['Quantity'];
+    $Price = $_POST['Price'];
+
+    $sql = "INSERT INTO `grade1`(`Item_No`, `Item_Name`, `Qauntity`, `Price`) VALUES ('$Item_No','$Item_Name','$Quantity','$Price')"
+
+    $result = mysqli_query($conn, $sql);
+
+    if($result) {
+        header("Location: index.php?msg=New record created successfully");
+    }
+
+    else {
+        echo "Failed: " .mysqli_error($conn) 
+       }
+
+
+}
+
+?>
+
+
+
+
+
+
 <html>
     <html lang="en">
         <head>
@@ -13,7 +44,7 @@
         </head>
 
         <body>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        
         <aside class="dashboard-sidebar">
         <div class="dashboard-header">
             <h3><div class="dashboard-logo">MIHIRA BOOK SHOP</h3></div>
@@ -37,29 +68,37 @@
     </aside>
 
 
-    <table class="grade_1_table">
-                    <thead>
-                        <tr>
-                            <th>Item No</th>
-                            <th>Item</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
-                            
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Nursery Rhymes</td>
-                            <td>50</td>
-                            <td>150</td>
-                            <td>
-                                <button class="btn btn-success btn-sm">Update</button>
-                                <button class="btn btn-danger btn-sm">Delete</button>
-                            </td>
-                        </tr>
-                     
-                    </tbody>
-                </table>
+    <div class="container mt-5">
+        <h2 class="mb-4">Items Table</h2>
 
-            
+        
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Item_No</th>
+                    <th>Item_Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+                    <td>item_no</td>
+                    <td>item</td>
+                    <td>quantity</td>
+                    <td>price</td>
+                    <td>Action</td>
+                        
+                    </td>
+                </tr>
+              
+            </tbody>
+        </table>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </div>
+
+    
