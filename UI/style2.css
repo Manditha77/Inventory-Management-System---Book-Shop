@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: rgb(236, 231, 231);
+}
+
+.wrapper {
+    display: flex;
+    position: relative;
+}
+
+.wrapper .sidebar {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background: rgb(194, 45, 31);
+    padding: 30px 0;
+}
+
+.wrapper .sidebar h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.wrapper .sidebar h3 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+}
+
+.wrapper .sidebar ul li {
+    padding: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-top: 1px solid rgba(225, 225, 225, 0.05);
+}
+
+.wrapper .sidebar ul li a {
+    color: white;
+    display: block;
+    width: 100%;
+    text-decoration: none;
+}
+
+.wrapper .sidebar ul li a i {
+    margin-right: 15px;
+}
+
+.wrapper .sidebar ul li a .bx{
+    width: 25px;
+}
+
+.wrapper .sidebar ul li:hover {
+    background: #cb5c4d;
+    text-decoration: none;
+}
+
+.wrapper .sidebar ul li:hover a {
+    color: rgb(149, 134, 124);
+   
+}
