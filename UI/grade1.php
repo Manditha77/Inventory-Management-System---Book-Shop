@@ -71,6 +71,9 @@ if(isset ($_POST['update'])) {
     <div class="container mt-5">
         <h2 class="mb-4">Items Table</h2>
 
+        <a href="Add_new.php?id=' . $item['item_no'] . '" class="btn btn-danger btn-sm">Add New</a>
+
+
         
         <table class="table table-bordered">
             <thead class="thead-dark">
@@ -92,6 +95,9 @@ if(isset ($_POST['update'])) {
                          <a href="update.php?id=' . $item['item_no'] . '" class="btn btn-success btn-sm">Update</a>
                         <a href="delete.php?id=' . $item['item_no'] . '" class="btn btn-danger btn-sm">Delete</a>
                     </td>
+
+                   
+                   
 
                         
                     </td>
