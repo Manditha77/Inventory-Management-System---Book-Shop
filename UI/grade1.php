@@ -1,34 +1,3 @@
-<?php
-include "db_conn.php";
-
-if(isset ($_POST['update'])) {
-    $Item_No = $_POST['Item_No'];
-    $Item_Name = $_POST['Item_Name'];
-    $Quantity = $_POST['Quantity'];
-    $Price = $_POST['Price'];
-
-    $sql = "INSERT INTO `grade1`(`Item_No`, `Item_Name`, `Quantity`, `Price`) VALUES ('$Item_No','$Item_Name','$Quantity','$Price')";
-
-    $result = mysqli_query($conn, $sql);
-
-    if($result) {
-        header("Location: index.php?msg=New record created successfully");
-    }
-
-    else {
-        echo "Failed: " .mysqli_error($conn);
-       }
-
-
-}
-
-?>
-
-
-
-
-
-
 <html>
     <html lang="en">
         <head>
@@ -69,42 +38,85 @@ if(isset ($_POST['update'])) {
 
 
     <div class="container mt-5">
-        <h2 class="mb-4">Items Table</h2>
+        <h2 class="mb-3">Grade 1</h2>
+        <a href="add_new.php" class="btn btn-dark">Add New</a>
 
-        <a href="Add_new.php?id=' . $item['item_no'] . '" class="btn btn-danger btn-sm">Add New</a>
-
+        <?php
+        if (isset ($_GET['msg'])){
+            $msg = $_GET['msg'];
+            echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+            '.$msg.'
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+        } ?>
 
         
-        <table class="table table-bordered">
+
+        
+        <table class="table table-hover text-center">
+            <thead class="thead-dark">
+            <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Item_No</th>
+      <th scope="col">Item</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php
+    // Include the database connection file
+    include "db_conn.php";
+
+    // Query to get information from the 'grade1' table
+    $sql = "SELECT * FROM `grade1`";
+    $result = mysqli_query($conn, $sql);
+
+
+    // Check if there are any results
+    if (mysqli_num_rows($result) > 0) {
+?>
+        <table class="table table-hover text-center">
             <thead class="thead-dark">
                 <tr>
-                    <th>Item_No</th>
-                    <th>Item_Name</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Actions</th>
+                    <th scope="col">Item_No</th>
+                    <th scope="col">Item_Name</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
-               
-                    <td>item_no</td>
-                    <td>item</td>
-                    <td>quantity</td>
-                    <td>price</td>
-                    <td>
-                         <a href="update.php?id=' . $item['item_no'] . '" class="btn btn-success btn-sm">Update</a>
-                        <a href="delete.php?id=' . $item['item_no'] . '" class="btn btn-danger btn-sm">Delete</a>
-                    </td>
-
-                   
-                   
-
-                        
-                    </td>
-                </tr>
-              
+                <?php
+                    // Fetch and display each row of data
+                    while ($row = mysqli_fetch_assoc($result)) {
+                ?>    
+                        <tr>
+                            <td><?php echo $row['Item_No']; ?></td>
+                            <td><?php echo $row['Item_Name']; ?></td>
+                            <td><?php echo $row['Quantity']; ?></td>
+                            <td><?php echo $row['Price']; ?></td>
+                            <td>
+                                <a href="edit.php?id=<?php echo $row['Item_No']; ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5 me-3"></i></a>
+                                <a href="delete.php?id=<?php echo $row['Item_No']; ?>" class="link-dark"><i class="fa-solid fa-trash fs-5"></i></a>
+                            </td>
+                        </tr>
+                <?php
+                    } // End of while loop
+                ?>
             </tbody>
         </table>
+<?php
+    } 
+    
+?>
+        
+    
+ </tbody>
+</table>
+       
 
 
 

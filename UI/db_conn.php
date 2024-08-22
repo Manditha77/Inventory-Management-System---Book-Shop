@@ -1,12 +1,17 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "Dulmi#12345";
+$servername = "localhost:3307";
+$dBUsername = "root";
+$dBPassword = "";
+$dBName = "inventory-management-system---book-shop";
 
-    $conn = mysqli_connect($servername, $username, $password );
+$conn = mysqli_connect($servername, $dBUsername, $dBPassword, $dBName);
 
-    if(!$conn){
-        die("connection failed: " .mysqli_connect_error());
-    }
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+else {
+   // echo "connect suuccessfully";
+}
+?>
 
-    //echo "Connect Successfully";
+  
