@@ -54,18 +54,8 @@
 
         
         <table class="table table-hover text-center">
-            <thead class="thead-dark">
-            <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Item_No</th>
-      <th scope="col">Item</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Price</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
+        <thead class="thead-dark">
+            
   <?php
     // Include the database connection file
     include "db_conn.php";
@@ -96,7 +86,7 @@
                         <tr>
                             <td><?php echo $row['Item_No']; ?></td>
                             <td><?php echo $row['Item_Name']; ?></td>
-                            <td><?php echo $row['Quantity']; ?></td>
+                            <td><?php echo $row['Qauntity']; ?></td>
                             <td><?php echo $row['Price']; ?></td>
                             <td>
                                 <a href="edit.php?id=<?php echo $row['Item_No']; ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5 me-3"></i></a>
