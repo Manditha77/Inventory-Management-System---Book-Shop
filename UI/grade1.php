@@ -86,7 +86,7 @@
                         <tr>
                             <td><?php echo $row['Item_No']; ?></td>
                             <td><?php echo $row['Item_Name']; ?></td>
-                            <td><?php echo $row['Qauntity']; ?></td>
+                            <td><?php echo $row['Quantity']; ?></td>
                             <td><?php echo $row['Price']; ?></td>
                             <td>
                                 <a href="edit.php?id=<?php echo $row['Item_No']; ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5 me-3"></i></a>
